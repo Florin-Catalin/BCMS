@@ -1,0 +1,14 @@
+0. As a product owner, I want to have the stories estimated so that we can make a good plan
+1. As a developer, I want to investigate technologies and hardware
+2. As a developer, I want to connect sensors and camera to the Raspberry Pi
+3. As a developer, I want to read data from sensors
+4. As a developer, I want to implement server
+5. As a developer, I want to send data to the server via MQTT comm protocol
+6. As a developer, I want to show data on UI
+7. As a developer, I want to create a database with the users and data
+8. As a developer, I want to identify the registered users 
+9. As a developer, I want to implement the functionality to recognise if a person leaves or enters room
+10. As a developer, I want to provide statistics and show them on UI
+11. As a developer, I want to send notifications via FONA (GSM module)
+12. As a developer, I want to create documentation and put everything together
+13. As a tester, I want to create manual and automated tests

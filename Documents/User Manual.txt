@@ -1,0 +1,30 @@
+* Pressing the Home button / Logo button will redirect you to the Homepage.
+
+* Sensors data tab:
+	- Pressing the green Start button will change the server from offline mode to online mode
+	- Search bar is used to find any entries based on any keyword
+	- You can sort the data by clicking on the header of table
+	- There is a table page number too which indicates which page are we on
+
+* Visitor photos tab:
+	- In the center of the screen you can see a photo with the last visitor and the access of that person(Door Locked/Unlocked)
+	- There is a search bar used to find any entries based on any keyword
+	- You can sort the data by clicking on the header of table
+	- There is a table page number too which indicates which page are we on
+
+* Live chart tab:
+	- Every 3 seconds the chart is updating himself with the new datapoint(temperature,humidity)
+	- Every 20 points the chart shift on the left
+
+* Statistic chart:
+	- There are temperature/humidity/no. of visitors in room 715 from last month
+	- Up-right corner dropdown: save the current statistic as jpeg/png or print it
+
+* About tab:
+	- You can click on home -> about us text to change/refresh de page
+	- Explore our charts button -> send you on the statistics page
+	- On the bottom you can find a description of the team members
+
+* Contact tab:
+	- You must enter your name, email and subject and also the message
+	- Send message button -> dummy

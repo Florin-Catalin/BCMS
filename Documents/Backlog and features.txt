@@ -1,0 +1,29 @@
+Features:
+
+1.	Read data from sensors
+2.	Take picture (anyone who enters or leaves room)
+3.	Provide user interface and show data from sensors and the last captured picture
+4.	Register users in a  database -> open “door” via Bluetooth MAC address, 
+        when a registered user is nearby (measure the power of the signal…it can be done relatively easy)
+5.	If the 4th feature is done then we can modify things a little bit:
+	a.	Take picture only about the unregistered users (to find the “bad” guys)
+	b.	Save data about the registered users (when entered or left room)
+6.	Provide statistics
+7.	Additional: Use of a GSM module in order to send notifications when motion is detected, temperature/humidity is out of bounds, etc.
+8.      Of course documentation is needed.
+
+Backlog:
+
+1. Investigate technologies
+2. Investigate hardware
+3. Connect sensors and camera to the Raspberry Pi and read data 
+4. Implement server
+5. Send data to the server via MQTT
+6. Show data on UI
+7. Create database with the users and data
+8. Identify the registered users
+9. Implement the functionality to recognise if a person leaves or enters room
+10. Provide statistics and show them on UI
+11. Send notifications via FONA (GSM module)
+12. Create documentation and put everything together (Architecture, Use Case Diagram, Component Diagram, etc)
+13. Create final presentation

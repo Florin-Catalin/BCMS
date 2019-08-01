@@ -1,0 +1,129 @@
+We are using charts from canvasjs.com
+
+1. Create a new Model called DataPoint which stores data about time (or it's subdivision) and value
+
+using System;
+using System.Runtime.Serialization;
+ 
+namespace ASPNET_MVC_ChartsDemo.Models
+{
+	//DataContract for Serializing Data - required to serve in JSON format
+	[DataContract]
+	public class DataPoint
+	{
+		public DataPoint(double x, double y)
+		{
+			this.X = x;
+			this.Y = y;
+		}
+ 
+		//Explicitly setting the name to be used while serializing to JSON.
+		[DataMember(Name = "x")]
+		public Nullable<double> X = null;
+ 
+		//Explicitly setting the name to be used while serializing to JSON.
+		[DataMember(Name = "y")]
+		public Nullable<double> Y = null;
+	}
+}   
+
+2. Create a controller who use this type of DataPoints and send them to the UI
+
+using ASPNET_MVC_ChartsDemo.Models;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+ 
+namespace ASPNET_MVC_ChartsDemo.Controllers
+{
+	public class HomeController : Controller
+	{
+		// GET: Home
+		public ActionResult Index()
+		{
+			return View();
+		}
+ 
+		public ContentResult JSON( int xStart = 0, double yStart = 0, int length = 1)
+		{
+			List<DataPoint> dataPoints = new List<DataPoint>();
+			Random random = new Random();
+			double y = yStart;
+ 
+			for (int i = 0; i < length; i++)
+			{
+				y = y + random.Next(-1, 2);
+				dataPoints.Add(new DataPoint(xStart + i, y));
+			}
+ 
+			return Content(JsonConvert.SerializeObject(dataPoints, _jsonSetting), "application/json");
+		}
+ 
+		JsonSerializerSettings _jsonSetting = new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore };
+ 
+	}
+}     
+
+3. Create a new View called for example "Temperature Chart". Remove the Layout = null; part.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+ 
+// Initial Values
+var xValue = 0;
+var yValue = 10;
+var newDataCount = 6;
+dataPoints = [];
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2",
+	title: {
+		text: "Live Air Quality Update"
+	},
+	axisY: {
+		suffix: " µg/m3",
+	},
+	data: [{
+		type: "spline",
+		yValueFormatString: "#,##0.## µg/m3",
+		dataPoints: dataPoints
+	}]
+});
+ 
+updateData();
+ 
+function addData(data) {
+	if (newDataCount !== 1) {
+		$.each(data, function (key, value) {
+			dataPoints.push({ x: value.x, y: parseFloat(value.y) });
+			xValue++;
+			yValue = parseFloat(value.y);
+		});
+		newDataCount = 1;
+	} else {
+		//dataPoints.shift();
+		dataPoints.push({ x: data[0].x, y: parseFloat(data[0].y) });
+		xValue++;
+		yValue = parseFloat(data[0].y);
+	}
+	chart.render();
+	setTimeout(updateData, 3000);
+}
+ 
+function updateData() {
+	$.getJSON("/home/json?xstart=" + xValue + "&ystart=" + yValue + "&length=" + newDataCount, addData);
+}
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>        

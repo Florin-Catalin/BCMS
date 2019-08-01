@@ -1,0 +1,31 @@
+1. Create a method to get the mac of a phone.
+def get_mac():
+    1.1 Call for a routine subprocess
+    p = subprocess.Popen('sudo iwlist wlan0 scan|egrep "Cell|ESSID|Signal"', stdout=subprocess.PIPE, shell = True) # |ESSID
+    1.2 process the retreived data to obtain the mac
+    (output, err) = p.communicate()
+    status = p.wait()
+    resultline = output
+    max_quality = 0
+    mac_addr = ''
+    cells = resultline.split('Cell')
+    for i in range(len(cells)):
+        splitted_cell = cells[i].split(' ')
+        formatted_splitted_cell = list(filter(lambda x: x != '' and x != '\n', splitted_cell))
+        if(formatted_splitted_cell):
+            #print formatted_splitted_cell[3][:-1]
+            #print formatted_splitted_cell[4]
+            max_temp = int(formatted_splitted_cell[4][8:10])
+            if(max_temp > max_quality):
+                max_quality = max_temp
+                mac_addr = formatted_splitted_cell[3][:-1]
+    print "Max quality: %s" % max_quality
+    print "Mac addr: %s" % mac_addr
+    1.3 return the max quality with it's mac address
+    return (max_quality,mac_addr)
+
+2. Convert the image to base 64, concatenate it with the mac addr and send it to the server
+def convertImageToBase64(addr):
+    with open("picture.jpg", "rb") as image_file:
+        encoded = base64.b64encode(image_file.read())
+    sendData(encoded+"@"+addr,"sensors7","P3")

@@ -1,0 +1,9 @@
+We are using the VARBINARY(MAX) type for storing images in database. Under the hood it is a byte[] stream.
+
+CREATE TABLE [dbo].[VisitorPhoto]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Mac] NVARCHAR(50) NULL, 
+    [Photo] VARBINARY(MAX) NULL, 
+    [Date] DATETIME NULL
+)

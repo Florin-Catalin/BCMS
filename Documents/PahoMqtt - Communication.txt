@@ -1,0 +1,65 @@
+a) Publisher:
+
+1. Import the paho.mqtt.client library
+import paho.mqtt.client as mqtt
+
+2. Create a broker address
+broker_address = "192.168.XX.YYY"
+
+3. Create a method to send our data to that broker
+def sendData(MESSAGE,topic,client_name):
+	3.1 Create a new instance
+	client = mqtt.Client(client_name)
+	3.2 Connect to the broker
+	client.connect(broker_address)
+	3.3 Subscribe to the topic
+	client.subscribe(topic)
+	3.4 Publish message to topic
+	client.publish(topic,str(MESSAGE))
+
+b) Subscriber:
+
+1. Same as publisher
+
+2. Same as publisher
+
+3. Create a MQTT_PATH
+MQTT_PATH = "rgb_led"
+
+4. The callback for when the client receives a CONNACK response from the server.
+def on_connect(client, userdata, flags, rc):
+	print("Connected with the result code " + str(rc))
+	4.1 Subscribing in on_connect() means that if we lose the connectiond and reconnect then subsciption will be renewed.
+	client.subscribe(MQTT_PATH)
+
+5. The callback for when a PUBLISH message is received from the server.
+def on_message(client, userdata, msg):
+	print(msg.topic+" "+str(msg.payload))
+
+6. Create the connection and connect to the MQTT_SERVER:
+client = mqtt.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+ 
+client.connect(MQTT_SERVER, 1883, 60)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
