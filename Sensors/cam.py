@@ -3,6 +3,7 @@ import os
 import pygame, sys
 from mqtt_publisher import sendData
 from pygame.locals import *
+from take_pic import take_pic
 #from signal1 import get_mac
 import pygame.camera
 import base64
@@ -61,7 +62,7 @@ def takePicture():
 	pygame.image.save(windowSurfaceObj,'picture.jpg')
 #takePicture()
 
-def convertImageToBase64(addr):
+def convertImageToBase64(addr="AA"):
     with open("picture.jpg", "rb") as image_file:
         encoded = base64.b64encode(image_file.read())
     sendData(encoded+"@"+addr,"sensors7","P3")
@@ -77,14 +78,17 @@ def randomword(length):
 def webcam():
     new_addr = ''
     old_addr = ''
-    while True:
-       (quality,addr) = get_mac()
-       new_addr = addr
-       if(quality > 69 and new_addr != old_addr): #and new_addr != "94:B4:0F:83:50:A0"):
-            takePicture() 
-            convertImageToBase64(addr)
-            old_addr = addr
-            
+    #while True:
+    (quality,addr) = get_mac()
+    new_addr = addr
+    if(quality > 69 and new_addr != old_addr): #and new_addr != "94:B4:0F:83:50:A0"):
+         take_pic() 
+         convertImageToBase64(addr)
+         old_addr = addr
+	
+    else:
+        take_pic()
+        convertImageToBase64()
     
 
 def publishEncodedImage(encoded): 
@@ -102,5 +106,5 @@ def publishEncodedImage(encoded):
      start += packet_size
      pos = pos +1
 
-webcam()
+#webcam()
 
