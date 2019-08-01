@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BCMSDatabaseModel1StoreContainer" CdmEntityContainer="BCMSDatabaseEntities1">
+    <EntitySetMapping Name="VisitorPhotoes">
+      <EntityTypeMapping TypeName="BCMSDatabaseModel1.VisitorPhoto">
+        <MappingFragment StoreEntitySet="VisitorPhoto">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Mac" ColumnName="Mac" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

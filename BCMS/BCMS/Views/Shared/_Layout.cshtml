@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background:black; height:70px">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/img/imageedit_7_2412677198.png" style="width:55px;height:60px;padding-top:5px" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")">
+                            <span class="glyphicon glyphicon-home"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "SensorData")">
+                            <span class="glyphicon glyphicon-hdd"></span>
+                            Sensors data
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "VisitorPhoto")">
+                            <span class="glyphicon glyphicon-picture"></span>
+                            Visitor photos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "LiveChart")">
+                            <span class="glyphicon glyphicon-stats"></span>
+                            Live chart
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "PieChart")">
+                            <span class="glyphicon glyphicon-dashboard"></span>
+                            Statistics
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("About", "Home")">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Contact", "Home")">
+                            <span class="glyphicon glyphicon-paperclip"></span>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        @*<hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>*@
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("styles", required: false)
+
+</body>
+</html>
+
+<style>
+    .navbar-brand {
+        float: left;
+        padding: 15px 15px;
+        font-size: 40px;
+        line-height: 20px;
+        font-family: 'Facebook Letter Faces'
+    }
+    .navbar-nav {
+        padding-top: 10px;
+    }
+    .body-content{
+        padding-top: 15px;
+    }
+</style>

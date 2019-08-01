@@ -1,0 +1,9 @@
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\bin\Debug\BCMSDatabase.dacpac
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\bin\Debug\BCMSDatabase.dll
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\bin\Debug\BCMSDatabase.pdb
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\obj\Debug\BCMSDatabase.dll
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\obj\Debug\BCMSDatabase.pdb
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\obj\Debug\Model.xml
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\obj\Debug\refactor.xml
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\obj\Debug\postdeploy.sql
+C:\Users\g.daian\source\repos\BCMSDatabase\BCMSDatabase\obj\Debug\predeploy.sql

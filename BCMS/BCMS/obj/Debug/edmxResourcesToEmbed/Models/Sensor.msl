@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BCMSDatabaseModelStoreContainer" CdmEntityContainer="BCMSDatabaseEntities">
+    <EntitySetMapping Name="SensorDatas">
+      <EntityTypeMapping TypeName="BCMSDatabaseModel.SensorData">
+        <MappingFragment StoreEntitySet="SensorData">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Humidity" ColumnName="Humidity" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="RPiID" ColumnName="RPiID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

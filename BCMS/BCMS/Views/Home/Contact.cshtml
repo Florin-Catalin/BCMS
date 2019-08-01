@@ -1,0 +1,135 @@
+﻿
+<head>
+
+
+    <!--
+            Google Font
+            ============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+    <!--
+            CSS
+            ============================================= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/linearicons.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/animate.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/main.css">
+</head>
+
+<body background="https://images.pexels.com/photos/64779/pexels-photo-64779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    <!-- Start contact-page Area -->
+    <section class="contact-page-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 d-flex flex-column address-wrap">
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-home"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Cluj-Napoca, Romania</h5>
+                            <p>
+                                109 Str. Repbulicii, 3rd floor
+                            </p>
+                        </div>
+                    </div>
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-phone-handset"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>00 (40) 372 664 800</h5>
+                            <p>Mon to Fri 9am to 6 pm</p>
+                        </div>
+                    </div>
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-envelope"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>support@accenture.com</h5>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <div class="col-lg-8">
+                    <form class="form-area contact-form text-right" id="myForm" action="mail.php" method="post">
+                        <div class="row">
+                            <div class="col-lg-6 form-group">
+                                <input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
+                                       class="common-input mb-20 form-control" required="" type="text" style="opacity: 0.7">
+
+                                <input name="email" placeholder="Enter email address" onfocus="this.placeholder = ''"
+                                       onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email" style="opacity: 0.7">
+
+                                <input name="subject" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'"
+                                       class="common-input mb-20 form-control" required="" type="text" style="opacity: 0.7">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <textarea class="common-textarea form-control" name="message" placeholder="Enter Messege" onfocus="this.placeholder = ''"
+                                          onblur="this.placeholder = 'Enter Messege'" required="" style="opacity: 0.8"></textarea>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="alert-msg" style="text-align: left;"></div>
+                                <button class="primary-btn" style="float: right;">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End contact-page Area -->
+    <!-- ####################### Start Scroll to Top Area ####################### -->
+    @*<div id="back-top">
+            <a title="Go to Top" href="#"></a>
+        </div>*@
+    <!-- ####################### End Scroll to Top Area ####################### -->
+
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="~/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="~/js/easing.min.js"></script>
+    <script src="~/js/hoverIntent.js"></script>
+    <script src="~/js/superfish.min.js"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/owl-carousel-thumb.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+    <script src="~/js/parallax.min.js"></script>
+    <script src="~/js/waypoints.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/jquery.counterup.min.js"></script>
+    <script src="~/js/mail-script.js"></script>
+    <script src="~/js/main.js"></script>
+</body>
+<style>
+    body{
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+    .section-gap {
+        padding: 100px 0;
+    }
+    .contact-details{
+        color:white;
+    }
+    h5{
+        color:lightgreen;
+        
+    }
+    .primary-btn {
+        color: white;
+        background: linear-gradient(90deg,lightgreen 0%,lightseagreen 100%);
+    }
+</style>

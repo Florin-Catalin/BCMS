@@ -1,0 +1,89 @@
+﻿@model IEnumerable<BCMS.Models.SensorData>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Styles{
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" type="text/css" />
+
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" type="text/css" />
+}
+
+@section Scripts{
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+}
+
+<h2></h2>
+<body background=https://wallpapercave.com/wp/wp3205211.png>
+<a class="btn btn-success" href="@Url.Action("RunMqttConnection", "SensorData")">Start</a>
+<p>
+</p>
+
+<table id="example" class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RPiID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Temperature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Humidity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+        </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="page-item">
+                @Html.DisplayFor(modelItem => item.RPiID)
+            </td>
+            <td class="page-item">
+                @Html.DisplayFor(modelItem => item.Temperature)
+            </td>
+            <td class="page-item">
+                @Html.DisplayFor(modelItem => item.Humidity)
+            </td>
+            <td class="page-item">
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td class="page-item">
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+
+    }
+        </tbody>
+</table>
+    </body>
+
+<style>
+    .table{
+        background-color: white;
+    }
+    label{
+        color:white;
+    }
+    .dataTables_info{
+        color:white;
+    }
+    div.col-sm-12.col-md-6:nth-of-type(1){
+        float:right;
+        visibility: hidden;
+    }
+</style>

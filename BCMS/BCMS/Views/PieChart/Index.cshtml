@@ -1,0 +1,74 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Temperature from last month in room 715",
+		fontSize: 23
+	},
+	data: [{
+		type: "pie",
+		startAngle: 160,
+		toolTipContent: "<b>{label}</b>: {y}%",
+		indexLabel: "{label} - {y}%",
+		dataPoints: @Html.Raw(ViewBag.DataPoints)
+	}]
+    });
+
+    var chart2 = new CanvasJS.Chart("chartContainer2", {
+        theme: "light2",
+        exportEnabled: true,
+        animationEnabled: true,
+        title: {
+            text: "Humidity from last month in room 715",
+            fontSize: 23
+        },
+        data: [{
+            type: "column",
+            startAngle: 80,
+            toolTipContent: "<b>{label}</b>: {y}%",
+            indexLabel: "{label}ⅇ - {y}%",
+            dataPoints: @Html.Raw(ViewBag.DataPoints2)
+        }]
+    });
+
+        var chart3 = new CanvasJS.Chart("chartContainer3", {
+        theme: "light1",
+        exportEnabled: true,
+        animationEnabled: true,
+        title: {
+            text: "No. of visitors - room 715",
+            fontSize: 23
+        },
+        data: [{
+            type: "bar",
+            startAngle: 80,
+            toolTipContent: "<b>{label}</b>: {y}",
+            dataPoints: @Html.Raw(ViewBag.DataPoints3)
+        }]
+    });
+
+    chart.render();
+
+    chart2.render();
+
+    chart3.render();
+}
+    </script>
+</head>
+<body background=https://wallpapercave.com/wp/wp3205211.png>
+    <div id="chartContainer1" style="height: 370px; width: 100%; padding-top:20px;"></div>
+    <div id="chartContainer2" style="height: 370px; width: 100%; padding-top:20px;"></div>
+    <div id="chartContainer3" style="height: 370px; width: 100%; padding-top:20px;"></div>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+</body>
+</html>
